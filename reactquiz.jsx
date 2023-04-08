@@ -7,14 +7,13 @@ export default function App(props) {
     const [win, setWin] = useState(false);
 
     const roll = () => {
-        setDice1(Math.floor(Math.random() * 7));
-        setDice2(Math.floor(Math.random() * 7));
-    };
-
-    useEffect(() => {
-        if (dice1 === dice2)
+        const dice1Value = Math.floor(Math.random() * 7)
+        const dice2Value = Math.floor(Math.random() * 7)
+        setDice1(dice1Value);
+        setDice2(dice2Value);
+        if (dice1Value === dice2Value)
             setWin(true);
-    }, [dice1, dice2]);
+    };
 
     return (
         <div>
